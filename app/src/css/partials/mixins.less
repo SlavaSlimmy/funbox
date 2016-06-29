@@ -1,0 +1,37 @@
+.pack-view(@color: @main-color) {
+  .pack {
+    border-color: @color;
+    &:before,
+    &:after{
+      border-color: @color;
+    }
+    .pack__weight {
+      background: @color;
+    }
+    .pack__texts {
+      &:before,
+      &:after {
+        background: @color;
+      }
+    }
+  }
+}
+
+.pack-hover(@color: @hover-color) {
+  &:hover {
+    border-color: @color;
+    &:before,
+    &:after{
+      border-color: @color;
+    }
+    .pack__weight {
+      background: @color;
+    }
+    .pack__texts {
+      &:before,
+      &:after {
+        background: @color;
+      }
+    }
+  }
+}

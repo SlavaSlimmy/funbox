@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+  head
+    title FunBox test
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0')
+    link(href='css/main.css', rel='stylesheet', type='text/css', media='screen')
+    <!--[if lt IE 9]>
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    <![endif]-->
+  body
+  - var packsList = [{id: 1, title: "с фуа-гра", weight: "0,5", disabled: false}, {id: 2, title: "с рыбой", weight: "2", disabled: false}, {id: 3, title: "с курой", weight: "5", disabled: true}];
+    mixin packs__item(pack)
+      div.packs__item(class=pack.disabled ? ' packs__item_disabled' : '')
+        div.pack
+          div.pack__texts
+            div.pack__subtitle Сказочное заморское яство
+            div.pack__title Нямушка
+            div.pack__filler= pack.title
+            div.pack__text
+              case pack.id
+                when 1
+                  strong 10
+                  |  порций<br/>
+                  | мышь в подарок
+                when 2
+                  strong 40
+                  |  порций<br/>
+                  strong 2
+                  |  мыши в подарок
+                when 3
+                  strong 100
+                  |  порций<br/>
+                  strong 5
+                  |  мышей в подарок<br/>
+                  | заказчик доволен
+          div.pack__weight
+            div.pack__weight-num= pack.weight
+            div кг
+          div.pack__cat
+        if pack.disabled
+          div.packs__text.packs__text_disabled Печалька
+            = ', '
+            = pack.title
+            |  закончился.
+        else
+          div.packs__text.packs__text_show Чего сидишь? Порадуй котэ
+            = ', '
+            a.pack-link(href="") купи.
+          div.packs__text.packs__text_hide Головы щучьи с чесноком да свежайшая сёмгушка.
+
+    section.content
+      div.content__inner
+        div.container-fluid
+          div.title Ты сегодня покормил кота?
+          div.packs
+            for pack in packsList
+              +packs__item(pack)
+
+    script(src='js/main.js')

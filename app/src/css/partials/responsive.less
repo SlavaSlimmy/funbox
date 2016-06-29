@@ -1,0 +1,30 @@
+@media (max-width: @screen-xs-max) {
+  .packs__item {
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .packs__item {
+    margin-bottom: 20px;
+    &:last-child {
+      .make-sm-column-offset(3);
+    }
+  }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .container-fluid {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .packs {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .packs__item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

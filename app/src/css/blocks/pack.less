@@ -1,0 +1,129 @@
+.pack {
+  border: 4px solid @main-color;
+  border-top: 0px;
+  width: 320px;
+  margin: 45px auto 0px;
+  border-radius: 0px 0px 12px 12px;
+  height: 435px;
+  position: relative;
+  background:#f2f2f2;
+  cursor: pointer;
+  .transition(border-color @trans-time @trans-anim);
+  z-index: 2;
+  &:before {
+    content:'';
+    height: 46px;
+    width: calc(~"100% - 45px + 8px");
+    position: absolute;
+    top: -45px;
+    right: -4px;
+    background: #f2f2f2;
+    border: 4px solid @main-color;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-radius: 0px 12px 0px 0px;
+    .transition(border-color @trans-time @trans-anim);
+  }
+  &:after {
+    content:"";
+    position:absolute;
+    top: -39px;
+    left: 12px;
+    width: 45px;
+    height: 65px;
+    background: #f2f2f2;
+    border-left: 4px solid @main-color;
+    .rotate(45deg);
+//    z-index: -1;
+    .transition(border-color @trans-time @trans-anim);
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .pack-hover();
+
+  &__texts {
+    position: absolute;
+    left: 44px;
+    top: -27px;
+    z-index: 5;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -48px;
+      top: 28px;
+      width: 4px;
+      height: 4px;
+      background: @main-color;
+      z-index: 1;
+      .transition(background @trans-time @trans-anim);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left:-2px;
+      top:-18px;
+      width: 4px;
+      height: 4px;
+      background: @main-color;
+      z-index: 1;
+      .transition(background @trans-time @trans-anim);
+    }
+  }
+  &__subtitle {
+    font-size: 16px;
+    margin-bottom: 7px;
+    &_hover {
+      color: @selected-hover-color;
+    }
+  }
+  &__title {
+    color: #000000;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 3px;
+    margin-left: -2px;
+  }
+  &__filler {
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  &__text {
+    line-height: 16px;
+    margin-left: 1px;
+  }
+  &__weight {
+    width: 81px;
+    height: 81px;
+    border-radius: 50%;
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+    background: @main-color;
+    .transition(background @trans-time @trans-anim);
+    text-align: center;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 22px;
+    padding-top: 15px;
+    z-index: 5;
+  }
+  &__weight-num {
+    font-size: 42px;
+    line-height: 36px;
+  }
+  &__cat {
+    background: url("../img/cat.png") 0% 100% no-repeat;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border-radius: 0px 0px 0px 9px;
+  }
+}
