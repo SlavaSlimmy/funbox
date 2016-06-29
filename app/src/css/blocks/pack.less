@@ -12,7 +12,7 @@
   z-index: 2;
   &:before {
     content:'';
-    height: 46px;
+    height: 45px;
     width: calc(~"100% - 45px + 8px");
     position: absolute;
     top: -45px;
@@ -27,14 +27,13 @@
   &:after {
     content:"";
     position:absolute;
-    top: -39px;
-    left: 12px;
+    top: -38px;
+    left: 11px;
     width: 45px;
-    height: 65px;
+    height: 61px;
     background: #f2f2f2;
     border-left: 4px solid @main-color;
     .rotate(45deg);
-//    z-index: -1;
     .transition(border-color @trans-time @trans-anim);
     cursor: pointer;
     -webkit-backface-visibility: hidden;
@@ -51,7 +50,7 @@
       content: '';
       position: absolute;
       left: -48px;
-      top: 28px;
+      top: 25px;
       width: 4px;
       height: 4px;
       background: @main-color;
@@ -61,7 +60,7 @@
     &:after {
       content: '';
       position: absolute;
-      left:-2px;
+      left:-5px;
       top:-18px;
       width: 4px;
       height: 4px;
