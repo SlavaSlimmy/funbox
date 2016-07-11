@@ -1,9 +1,9 @@
-var hoverText = [
-    'Котэ не одобряет?',
-    'Сказочное заморское яство'
-];
+$(document).ready(function() {
+    var hoverText = [
+        'Котэ не одобряет?',
+        'Сказочное заморское яство'
+    ];
 
-$(function() {
     $(".pack, .pack-link").on("click", function (e) {
         e.preventDefault();
         var target = $(this).closest('.packs__item');
@@ -22,9 +22,7 @@ $(function() {
             }
         }
     });
-});
 
-$(function() {
     $(".pack").hover(
         function() {
             var target = $(this).closest('.packs__item');
@@ -39,10 +37,9 @@ $(function() {
             }
         }
     );
-});
 
-$(function() {
     $(".pack").mouseleave(function(){
         $(this).closest('.packs__item').removeClass('packs__item_selected-no-hover');
     });
+
 });
